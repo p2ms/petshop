@@ -1,13 +1,35 @@
+import 'dart:io';
+import 'package:flutter/foundation.dart';
+
 import 'cont.dart';
-import "../flutter_flow/flutter_flow_icon_button.dart";
+/*import "../flutter_flow/flutter_flow_icon_button.dart";
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_util.dart';*/
 import 'pedidos.dart';
 import 'perfil.dart';
 import 'produtos.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+
+void main() {
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode) exit(1);
+  };
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -165,7 +187,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => PedidosWidget(),
+                                  builder: (context) => Pedidos(),
                                 ),
                               );
                             },
@@ -182,7 +204,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => PerfilWidget(),
+                                  builder: (context) => Perfil(),
                                 ),
                               );
                             },
@@ -199,7 +221,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ProdutosWidget(),
+                                  builder: (context) => Produtos(),
                                 ),
                               );
                             },
@@ -216,7 +238,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ContWidget(),
+                                  builder: (context) => Cont(),
                                 ),
                               );
                             },
