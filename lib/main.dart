@@ -97,13 +97,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                           scrollDirection: Axis.horizontal,
                           children: [
                             Image.network(
-                              'https://www.petz.com.br/blog/wp-content/uploads/2015/06/shutterstock_111029813.jpg',
+                              'https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_960_720.jpg',
                               width: double.infinity,
                               height: 230,
                               fit: BoxFit.cover,
                             ),
                             Image.network(
-                              'https://petdelicia.com.br/blog/wp-content/uploads/2020/05/Captura-de-Tela-2020-05-28-a%CC%80s-00.23.33.png',
+                              'https://cdn.pixabay.com/photo/2018/03/29/21/51/cute-3273789_960_720.jpg',
                               width: double.infinity,
                               height: 230,
                               fit: BoxFit.cover,
