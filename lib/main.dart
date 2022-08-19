@@ -26,8 +26,15 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Aplicação',
+      theme: ThemeData(
+        primarySwatch: Colors.yellow,
+      ),
+      home: const HomeWidget(),
+    );
+    // throw UnimplementedError();
   }
 }
 
