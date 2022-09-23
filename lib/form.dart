@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +37,13 @@ class _FormWidgetState extends State<FormWidget> {
     senhaController = TextEditingController();
   
   }
+
+Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
 
   @override
   Widget build(BuildContext context) {
@@ -288,7 +297,7 @@ class _FormWidgetState extends State<FormWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     hintText: 'Senha',
-                    hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                    hintStyle: TextStyle(color: Colors.black) ,//FlutterFlowTheme.of(context).bodyText2,
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
@@ -330,15 +339,20 @@ class _FormWidgetState extends State<FormWidget> {
                       ),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyText1,
+                  style: TextStyle(color: Colors.white)//FlutterFlowTheme.of(context).bodyText1,
                 ),
               ),
-              FFButtonWidget(
+               //TextButton(onPressed: ,)
+              ElevatedButton(
                 onPressed: () {
                   print('Button pressed ...');
                 },
-                text: 'Enviar',
-                options: FFButtonOptions(
+                //child: (
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.resolveWith(getColor)
+                    /*backgroundColor: MaterialStatePropertyAll<Color>(Colors.green),
+                  text: 'Enviar',
+                  options: FFButtonOptions(
                   width: 130,
                   height: 40,
                   color: FlutterFlowTheme.of(context).tertiaryColor,
@@ -351,12 +365,24 @@ class _FormWidgetState extends State<FormWidget> {
                     width: 1,
                   ),
                   borderRadius: BorderRadius.circular(8),
-                ),
+                ),      */
+                  ), child: null,
+                              
+                ),               
               ),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }
